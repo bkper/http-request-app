@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "none",
+    "noImplicitUseStrict": true,
+    "experimentalDecorators": true,
+    "lib": [ "esnext" ],
+    "target": "ES6",
+    "noImplicitAny": true,
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "@types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules/",
+    "dist/"
+  ],
+
+}
