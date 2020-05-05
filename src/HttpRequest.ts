@@ -1,14 +1,14 @@
 class HttpRequest {
-  url: string;
-  method: "get" | "delete" | "patch" | "post" | "put" = "get";
-  headers: any;
-  params = new Map<string,string>();
-  contentType = "application/json; charset=UTF-8";
-  payload: any;
-  validateHttpsCertificates = true;
-  followRedirects = true;
-  muteHttpExceptions = false;
-  escaping = true;
+  private url: string;
+  private method: "get" | "delete" | "patch" | "post" | "put" = "get";
+  private headers: any;
+  private params = new Map<string,string>();
+  private contentType = "application/json; charset=UTF-8";
+  private payload: any;
+  private validateHttpsCertificates = true;
+  private followRedirects = true;
+  private muteHttpExceptions = false;
+  private escaping = true;
 
   constructor(url: string) {
     //TODO parse url
@@ -76,7 +76,36 @@ class HttpRequest {
     return url
   }
 
+  public execute(): GoogleAppsScript.URL_Fetch.HTTPResponse {
   
+    let options: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {};
+
+    if (this.headers != null) {
+      options.headers = this.headers;
+    }
+    
+    if (this.contentType != null) {
+      options.contentType = this.contentType;
+    }
+    
+    if (this.method != null) {
+      options.method = this.method;
+    }
+    
+    if (this.payload != null) {
+      options.payload = this.payload;
+    }
+
+    options.validateHttpsCertificates = this.validateHttpsCertificates
+    options.followRedirects = this.followRedirects;
+    options.muteHttpExceptions = this.muteHttpExceptions;
+    options.escaping = this.escaping;
+
+    return UrlFetchApp.fetch(this.getUrl(), options);
+    
+  }; 
+
+
 }
 
 
