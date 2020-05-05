@@ -30,7 +30,7 @@
     "major": "yarn version --major",
     "preversion": "run-s build push",
     "postversion": "clasp version $npm_package_version && git push && git push --tags  && echo \"Successfully released version $npm_package_version!\"",
-    "publish-types": "yarn build && yarn --cwd dist/@bkper/http-request-app publish --access public"
+    "publish-types": "yarn build && yarn --cwd dist/@bkper/http-request-app-types publish --new-version $npm_package_version --access public"
   },
   "devDependencies": {
     "@google/clasp": "^2.3.0",

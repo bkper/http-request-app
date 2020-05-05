@@ -6,7 +6,7 @@ class HttpRequest {
   private method: "get" | "delete" | "patch" | "post" | "put" = "get";
   private headers: any;
   private params = new Map<string,string>();
-  private contentType = "application/json; charset=UTF-8";
+  private contentType: string;
   private payload: any;
   private validateHttpsCertificates = true;
   private followRedirects = true;
