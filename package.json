@@ -1,6 +1,18 @@
 {
   "name": "@bkper/http-request-app",
   "version": "1.0.0",
+  "description": "Fluent interface for URLFetchApp to simplify HttpRequest building",
+  "homepage": "https://bkper.com/docs/#httprequestapp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bkper/http-request-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bkper/http-request-app/issues",
+    "email": "mael@bkper.com"
+  },
+  "author": "Mael Caldas <mael@bkper.com>",
+  "license": "MIT",
   "scripts": {
     "clean": "rimraf build && rimraf dist",
     "login": "clasp login",
@@ -9,10 +21,9 @@
     "push": "clasp push",
     "start": "yarn push --watch",
     "test": "run-s test:*",
-    "test:bundle": "tsc -p tsconfig.test.json --outFile build/test-bundle.js",
+    "test:bundle": "tsc --skipLibCheck --sourcemap --outFile build/test-bundle.js --module system",
     "test:run": "mocha --require source-map-support/register build/test-bundle.js",
     "build": "yarn && yarn clean && yarn test && run-s build:*",
-    "build:js": "tsc --outFile dist/HttpRequestApp.js",
     "build:types": "yarn clasp-types",
     "patch": "yarn version --patch",
     "minor": "yarn version --minor",
