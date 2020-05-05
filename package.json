@@ -7,6 +7,9 @@
     "pull": "clasp pull",
     "push": "clasp push",
     "start": "yarn push --watch",
+    "test": "run-s test:*",
+    "test:bundle": "tsc --skipLibCheck --sourcemap --outFile build/test-bundle.js --module system",
+    "test:run": "mocha --require source-map-support/register build/test-bundle.js",
     "patch": "yarn version --patch",
     "minor": "yarn version --minor",
     "major": "yarn version --major",
@@ -14,7 +17,14 @@
     "postversion": "clasp deploy --description $npm_package_version --deploymentId AKfycbxz1Fl1A_KpvAtWLSXtGh1oRaFdWibPweoJfa3yYrFRAAC6gRM && git push && git push --tags && echo \"Successfully released version $npm_package_version!\""
   },
   "devDependencies": {
-    "@bkper/bkper-app-types": "^1.6.3",
-    "@google/clasp": "^2.3.0"
+    "@google/clasp": "^2.3.0",
+    "@types/chai": "^4.2.11",
+    "@types/google-apps-script": "^1.0.13",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.4",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "npm-run-all": "^4.1.5",
+    "source-map-support": "^0.5.19"
   }
 }
