@@ -1,3 +1,6 @@
+/**
+ * @public
+ */
 class HttpRequest {
   private url: string;
   private method: "get" | "delete" | "patch" | "post" | "put" = "get";

@@ -1,4 +1,8 @@
 {
   "scriptId": "1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_",
-  "rootDir": "./src"
+  "rootDir": "./src",
+  "library": {
+    "namespace": "GoogleAppsScript",
+    "name": "HttpRequestApp"
+  }
 }

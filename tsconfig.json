@@ -6,11 +6,12 @@
     "lib": [ "esnext" ],
     "target": "ES6",
     "noImplicitAny": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
+    "@types/**/*.d.ts",
     "test/**/*.ts",
-    "@types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules/",

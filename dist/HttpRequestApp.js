@@ -1,3 +1,6 @@
+/**
+ * @public
+ */
 class HttpRequest {
     constructor(url) {
         this.method = "get";
@@ -62,7 +65,34 @@ class HttpRequest {
         }
         return url;
     }
+    execute() {
+        let options = {};
+        if (this.headers != null) {
+            options.headers = this.headers;
+        }
+        if (this.contentType != null) {
+            options.contentType = this.contentType;
+        }
+        if (this.method != null) {
+            options.method = this.method;
+        }
+        if (this.payload != null) {
+            options.payload = this.payload;
+        }
+        options.validateHttpsCertificates = this.validateHttpsCertificates;
+        options.followRedirects = this.followRedirects;
+        options.muteHttpExceptions = this.muteHttpExceptions;
+        options.escaping = this.escaping;
+        return UrlFetchApp.fetch(this.getUrl(), options);
+    }
+    ;
 }
+/**
+ *
+ * @public
+ *
+ * @param url The url to target the request
+ */
 function newHttpRequest(url) {
     return new HttpRequest(url);
 }
@@ -84,4 +114,3 @@ describe('HttpRequest', () => {
         expect(httpRequest.getUrl()).to.equal("https://api.exchangeratesapi.io/history?start_at=2018-01-01&end_at=2018-09-01");
     });
 });
-//# sourceMappingURL=test-bundle.js.map

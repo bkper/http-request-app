@@ -1,0 +1,9 @@
+{
+  "name": "@bkper/http-request-app-types",
+  "version": "1.0.0",
+  "scripts": {},
+  "devDependencies": {},
+  "description": "Typescript definitions for HttpRequestApp",
+  "license": "MIT",
+  "types": "./index.d.ts"
+}

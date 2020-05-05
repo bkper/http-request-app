@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "module": "system",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "@types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules/",
+    "dist/"
+  ],
+
+}
