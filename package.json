@@ -11,7 +11,7 @@
     "test": "run-s test:*",
     "test:bundle": "tsc -p tsconfig.test.json --outFile build/test-bundle.js",
     "test:run": "mocha --require source-map-support/register build/test-bundle.js",
-    "build": "yarn clean && yarn test && run-s build:*",
+    "build": "yarn && yarn clean && yarn test && run-s build:*",
     "build:js": "tsc --outFile dist/HttpRequestApp.js",
     "build:types": "yarn clasp-types",
     "patch": "yarn version --patch",
