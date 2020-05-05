@@ -1,9 +1,19 @@
 {
   "name": "@bkper/http-request-app-types",
   "version": "1.0.0",
+  "description": "Typescript definitions for HttpRequestApp",
+  "homepage": "https://bkper.com/docs/#httprequestapp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bkper/http-request-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bkper/http-request-app/issues",
+    "email": "mael@bkper.com"
+  },
+  "author": "Mael Caldas <mael@bkper.com>",
+  "license": "MIT",
   "scripts": {},
   "devDependencies": {},
-  "description": "Typescript definitions for HttpRequestApp",
-  "license": "MIT",
   "types": "./index.d.ts"
 }

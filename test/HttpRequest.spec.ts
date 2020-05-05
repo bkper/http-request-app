@@ -2,21 +2,28 @@ var expect = require('chai').expect;
 
 describe('HttpRequest', () => {
   it('should accept url with no params', () => {
-     let httpRequest = new HttpRequest("https://api.exchangeratesapi.io/latest")
+     let httpRequest = newHttpRequest("https://api.exchangeratesapi.io/latest")
      expect(httpRequest.getUrl()).to.equal("https://api.exchangeratesapi.io/latest");
   });
 
   it('should append one param', () => {
-    let httpRequest = new HttpRequest("https://api.exchangeratesapi.io/latest")
-    httpRequest.addParam('base', 'USD')
+    let httpRequest = newHttpRequest("https://api.exchangeratesapi.io/latest")
+    .addParam('base', 'USD')
     expect(httpRequest.getUrl()).to.equal("https://api.exchangeratesapi.io/latest?base=USD");
   });  
 
   it('should append multiple params', () => {
-    let httpRequest = new HttpRequest("https://api.exchangeratesapi.io/history")
-    httpRequest.addParam('start_at', '2018-01-01')
-    httpRequest.addParam('end_at', '2018-09-01')
+    let httpRequest = newHttpRequest("https://api.exchangeratesapi.io/history")
+    .addParam('start_at', '2018-01-01')
+    .addParam('end_at', '2018-09-01')
     expect(httpRequest.getUrl()).to.equal("https://api.exchangeratesapi.io/history?start_at=2018-01-01&end_at=2018-09-01");
+  });  
+
+  it('should not append ? twice', () => {
+    let httpRequest = newHttpRequest("https://api.exchangeratesapi.io/history?key=xxx")
+    .addParam('start_at', '2018-01-01')
+    .addParam('end_at', '2018-09-01')
+    expect(httpRequest.getUrl()).to.equal("https://api.exchangeratesapi.io/history?key=xxx&start_at=2018-01-01&end_at=2018-09-01");
   });  
 
 });

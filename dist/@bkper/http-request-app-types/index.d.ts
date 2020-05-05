@@ -20,7 +20,7 @@ declare namespace GoogleAppsScript {
 
         addParam(name: string, value: string): HttpRequest;
 
-        execute(): GoogleAppsScript.URL_Fetch.HTTPResponse;
+        fetch(): GoogleAppsScript.URL_Fetch.HTTPResponse;
 
         getUrl(): string;
 

@@ -14,7 +14,6 @@ class HttpRequest {
   private escaping = true;
 
   constructor(url: string) {
-    //TODO parse url
     this.url = url;
   }
 
@@ -64,8 +63,12 @@ class HttpRequest {
   public getUrl(): string {
     let url = this.url;
     if (this.params.size > 0) {
-      url += '?';
       let i = 0
+      if (url.indexOf('?') < 0) {
+        url += '?';
+      } else {
+        i++;
+      }
       for (let [key, value] of this.params) {
         if (i > 0) {
           url += "&";
@@ -79,7 +82,7 @@ class HttpRequest {
     return url
   }
 
-  public execute(): GoogleAppsScript.URL_Fetch.HTTPResponse {
+  public fetch(): GoogleAppsScript.URL_Fetch.HTTPResponse {
   
     let options: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {};
 

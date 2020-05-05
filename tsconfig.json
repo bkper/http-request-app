@@ -5,8 +5,7 @@
     "experimentalDecorators": true,
     "lib": [ "esnext" ],
     "target": "ES6",
-    "noImplicitAny": true,
-    "skipLibCheck": true
+    "noImplicitAny": true
   },
   "include": [
     "src/**/*.ts",
@@ -16,6 +15,6 @@
   "exclude": [
     "node_modules/",
     "dist/"
-  ],
+  ]
 
 }

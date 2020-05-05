@@ -1,6 +1,6 @@
 # Summary
 
-This package contains Typescript definitions for [HttpRequestApp](https://developers.google.com/apps-script/guides/libraries)
+This package contains Typescript definitions for [HttpRequestApp](https://bkper.com/docs/#httprequestapp)
 
 # Instalation
 
