@@ -36,9 +36,9 @@ var response = HttpRequestApp.newHttpRequest('https://httpbin.org/post')
                 .fetch()
 ```
 
-### Calling an authenticated API
+<h3 id="http-request-app-calling-apis">Calling APIs</h3>
 
-To perform authenticated API calls, and having the endpoint and auth setup in one single place, you can extend the ```HttpRequest``` class and override the ```fetch()``` method, adding the auth token and/or key, or prepararing the request with any other data. Example:
+To perform authenticated API calls, and having the Endpoint and Auth setup in one single place, you can extend the ```HttpRequest``` class and override the ```fetch()``` method, adding the auth token and/or key, or prepararing the request with any other data. Example:
 
 ```js
 class HttpApiRequest extends HttpRequestApp.HttpRequest {
@@ -67,7 +67,7 @@ function callingTheApi() {
 
 
 
-<h3 id="bkper-app-setup">Setup</h3>
+<h3 id="http-request-app-setup">Setup</h3>
 
 This library is already published as an Apps Script, making it easy to include in your project. 
 
