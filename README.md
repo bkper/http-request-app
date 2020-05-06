@@ -47,12 +47,18 @@ class HttpApiRequest extends HttpRequestApp.HttpRequest {
   }
 
   fetch() {
+    console.log(`Fetching as user ${Session.getActiveUser().getEmail()}`);
     this.addHeader('Authorization', `Bearer ${ScriptApp.getOAuthToken()}`);
     this.addParam('key', PropertiesService.getScriptProperties().getProperty('API_KEY'));
     this.setContentType('application/json; charset=UTF-8')
     this.setMuteHttpExceptions(true);
     return super.fetch();
   }  
+}
+
+function callingTheApi() {
+  let response = new HttpApiRequest('ledgers').fetch();
+  console.log(response.getContentText())
 }
 
 ```
