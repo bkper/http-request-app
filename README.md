@@ -36,6 +36,27 @@ var response = HttpRequestApp.newHttpRequest('https://httpbin.org/post')
                 .fetch()
 ```
 
+### Calling an authenticated API
+
+To perform authenticated API calls, you can extend the ```HttpRequest``` class and override the ```fetch()``` method, adding the auth token and/or key, or prepararing the request with any other data. Example:
+
+```js
+class HttpApiRequest extends HttpRequestApp.HttpRequest {
+  constructor(path) {
+    super(`https://app.bkper.com/_ah/api/bkper/v2/${path}`)
+  }
+
+  fetch() {
+    this.addHeader('Authorization', `Bearer ${ScriptApp.getOAuthToken()}`);
+    this.addParam('key', PropertiesService.getScriptProperties().getProperty('API_KEY'));
+    this.setContentType('application/json; charset=UTF-8')
+    this.setMuteHttpExceptions(true);
+    return super.fetch();
+  }  
+}
+
+```
+
 
 
 <h3 id="bkper-app-setup">Setup</h3>
@@ -50,7 +71,7 @@ To add it to your script, do the following in the Apps Script code editor:
 4. Click the "Save" button.
 
 
-#### Add Typescript Definitions:
+#### Typescript Definitions for autocomplete:
 
 ##### 1) Add the package:
 
