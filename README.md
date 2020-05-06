@@ -38,7 +38,7 @@ var response = HttpRequestApp.newHttpRequest('https://httpbin.org/post')
 
 ### Calling an authenticated API
 
-To perform authenticated API calls, you can extend the ```HttpRequest``` class and override the ```fetch()``` method, adding the auth token and/or key, or prepararing the request with any other data. Example:
+To perform authenticated API calls, and having the endpoint and auth setup in one single place, you can extend the ```HttpRequest``` class and override the ```fetch()``` method, adding the auth token and/or key, or prepararing the request with any other data. Example:
 
 ```js
 class HttpApiRequest extends HttpRequestApp.HttpRequest {
