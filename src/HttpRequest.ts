@@ -14,7 +14,17 @@ class HttpRequest {
   private escaping = true;
 
   constructor(url: string) {
-    this.url = url;
+    let parts = url.split('?');
+    this.url = parts[0];
+    if (parts.length == 2) {
+      let params = parts[1].split('&');
+      params.forEach(param => {
+        let keyValue = param.split('=');
+        if (keyValue.length == 2) {
+          this.addParam(keyValue[0], keyValue[1])
+        }
+      });
+    }
   }
 
   public setMethod(method: "get" | "delete" | "patch" | "post" | "put"): HttpRequest {

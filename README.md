@@ -6,7 +6,7 @@ HttpRequestApp
 </a>
 </h2>
 
-A fluent interface for [Url Fetch Service](https://developers.google.com/apps-script/reference/url-fetch) to simplify HttpRequest building.
+A fluent interface for [Url Fetch Service](https://developers.google.com/apps-script/reference/url-fetch) to simplify HttpRequest building nad API integrations.
 
 [![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
 [![npm (scoped)](https://img.shields.io/npm/v/@bkper/http-request-app-types?color=%235889e4&label=types)](https://www.npmjs.com/package/@bkper/http-request-app-types)
@@ -15,10 +15,13 @@ A fluent interface for [Url Fetch Service](https://developers.google.com/apps-sc
 ```js
 var options = {
   'method' : 'post',
+  'header' : {
+    'token' : 'xxx'
+  }
   'contentType': 'application/json',
   'payload' : JSON.stringify(data)
 };
-var response = UrlFetchApp.fetch('https://httpbin.org/post', options);
+var response = UrlFetchApp.fetch('https://httpbin.org/post?key=yyy', options);
 
 ```
 
@@ -26,10 +29,14 @@ var response = UrlFetchApp.fetch('https://httpbin.org/post', options);
 ```js
 var response = HttpRequestApp.newHttpRequest('https://httpbin.org/post')
                 .setMethod('post')
+                .addHeader('token', 'xxx')
+                .addParam('key', 'yyy')
                 .setContentType('application/json')
                 .setPayload(JSON.stringify(data))
                 .fetch()
 ```
+
+
 
 <h3 id="bkper-app-setup">Setup</h3>
 
