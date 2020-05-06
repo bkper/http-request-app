@@ -1,7 +1,7 @@
 // Type definitions for HttpRequestApp
 // Generated using clasp-types
 
-declare namespace GoogleAppsScript {
+declare namespace Bkper {
 
     /**
      * The main entry point to interact with HttpRequestApp
@@ -40,4 +40,4 @@ declare namespace GoogleAppsScript {
 
 }
 
-declare var HttpRequestApp: GoogleAppsScript.HttpRequestApp;
+declare var HttpRequestApp: Bkper.HttpRequestApp;
