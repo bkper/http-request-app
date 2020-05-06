@@ -1,6 +1,6 @@
 {
   "name": "@bkper/http-request-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Fluent interface for URLFetchApp to simplify HttpRequest building",
   "homepage": "https://bkper.com/docs/#httprequestapp",
   "repository": {
