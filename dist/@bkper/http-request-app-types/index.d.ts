@@ -18,7 +18,7 @@ declare namespace Bkper {
 
         addHeader(name: string, value: string): HttpRequest;
 
-        addParam(name: string, value: string): HttpRequest;
+        addParam(name: string, value: any): HttpRequest;
 
         fetch(): GoogleAppsScript.URL_Fetch.HTTPResponse;
 
