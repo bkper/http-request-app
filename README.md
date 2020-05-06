@@ -6,7 +6,7 @@ HttpRequestApp
 </a>
 </h2>
 
-A fluent interface for [Url Fetch Service](https://developers.google.com/apps-script/reference/url-fetch) to simplify HttpRequest building nad API integrations.
+A fluent interface for [Url Fetch Service](https://developers.google.com/apps-script/reference/url-fetch) to simplify HttpRequest building and API integrations.
 
 [![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
 [![npm (scoped)](https://img.shields.io/npm/v/@bkper/http-request-app-types?color=%235889e4&label=types)](https://www.npmjs.com/package/@bkper/http-request-app-types)
