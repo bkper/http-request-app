@@ -5,7 +5,7 @@ class HttpRequest {
   private url: string;
   private method: "get" | "delete" | "patch" | "post" | "put" = "get";
   private headers: any;
-  private params = new Map<string,string>();
+  private params: any;
   private contentType: string;
   private payload: any;
   private validateHttpsCertificates = true;
@@ -31,7 +31,10 @@ class HttpRequest {
   }
 
   public addParam(name: string, value: string): HttpRequest {
-    this.params.set(name, value);
+    if (this.params == null) {
+      this.params = new Object();
+    }
+    this.params[name] = value;
     return this;
   }
 
@@ -62,22 +65,27 @@ class HttpRequest {
 
   public getUrl(): string {
     let url = this.url;
-    if (this.params.size > 0) {
+    if (this.params != null) {
       let i = 0
       if (url.indexOf('?') < 0) {
         url += '?';
       } else {
         i++;
       }
-      for (let [key, value] of this.params) {
-        if (i > 0) {
-          url += "&";
+      for (var prop in this.params) {
+        if (this.params.hasOwnProperty(prop)) {
+          if (i > 0) {
+            url += "&";
+          }
+          var key = prop;
+          var value = this.params[prop];          
+          if (value != null) {
+            url += key + "=" + encodeURIComponent(value);
+            i++;
+          }
         }
-        if (value != null) {
-          url += key + "=" + encodeURIComponent(value);
-          i++;
-        }
-      }
+      }      
+
     }
     return url
   }
