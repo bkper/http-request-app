@@ -3,15 +3,15 @@
  */
 class HttpRequest {
   private url: string;
-  private method: "get" | "delete" | "patch" | "post" | "put" = "get";
-  private headers: any;
-  private params: any;
-  private contentType: string;
-  private payload: any;
-  private validateHttpsCertificates = true;
-  private followRedirects = true;
-  private muteHttpExceptions = false;
-  private escaping = true;
+  protected method: "get" | "delete" | "patch" | "post" | "put" = "get";
+  protected headers: any;
+  protected params: any;
+  protected contentType: string;
+  protected payload: any;
+  protected validateHttpsCertificates = true;
+  protected followRedirects = true;
+  protected muteHttpExceptions = false;
+  protected escaping = true;
 
   constructor(url: string) {
     let parts = url.split('?');
@@ -31,6 +31,7 @@ class HttpRequest {
     this.method = method;
     return this;
   }
+  
 
   public addHeader(name: string, value: string): HttpRequest {
     if (this.headers == null) {
@@ -40,7 +41,7 @@ class HttpRequest {
     return this;
   }
 
-  public addParam(name: string, value: string): HttpRequest {
+  public addParam(name: string, value: any): HttpRequest {
     if (this.params == null) {
       this.params = new Object();
     }
@@ -129,7 +130,4 @@ class HttpRequest {
     
   }; 
 
-
 }
-
-
