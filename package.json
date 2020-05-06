@@ -1,7 +1,7 @@
 {
   "name": "@bkper/http-request-app",
   "version": "1.0.4",
-  "description": "Fluent interface for URLFetchApp to simplify HttpRequest building",
+  "description": "Fluent interface for Apps Script URL Fetch Service, to simplify 3rd party API integrations",
   "homepage": "https://bkper.com/docs/#httprequestapp",
   "repository": {
     "type": "git",
