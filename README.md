@@ -56,11 +56,13 @@ class HttpApiRequest extends HttpRequestApp.HttpRequest {
   }  
 }
 
+```
+Usage:
+```js
 function callingTheApi() {
   let response = new HttpApiRequest('ledgers').fetch();
   console.log(response.getContentText())
 }
-
 ```
 
 
