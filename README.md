@@ -36,36 +36,6 @@ var response = HttpRequestApp.newRequest('https://httpbin.org/post')
                 .fetch()
 ```
 
-<h3 id="http-request-app-calling-apis">Calling APIs</h3>
-
-To perform authenticated API calls, and having the Endpoint and Auth setup in one single place, you can extend the ```HttpRequest``` class and override the ```fetch()``` method, adding the auth token and/or key, or prepararing the request with any other data. Example:
-
-```js
-class HttpApiRequest extends HttpRequestApp.HttpRequest {
-  constructor(path) {
-    super(`https://app.bkper.com/_ah/api/bkper/v2/${path}`)
-  }
-
-  fetch() {
-    console.log(`Fetching as user ${Session.getActiveUser().getEmail()}`);
-    this.setHeader('Authorization', `Bearer ${ScriptApp.getOAuthToken()}`);
-    this.addParam('key', PropertiesService.getScriptProperties().getProperty('API_KEY'));
-    this.setContentType('application/json; charset=UTF-8')
-    this.setMuteHttpExceptions(true);
-    return super.fetch();
-  }  
-}
-
-```
-Usage:
-```js
-function callingTheApi() {
-  let response = new HttpApiRequest('ledgers').fetch();
-  console.log(response.getContentText())
-}
-```
-
-
 
 <h3 id="http-request-app-setup">Setup</h3>
 
