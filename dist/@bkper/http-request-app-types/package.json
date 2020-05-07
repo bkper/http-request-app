@@ -1,6 +1,6 @@
 {
   "name": "@bkper/http-request-app-types",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Typescript definitions for HttpRequestApp",
   "homepage": "https://bkper.com/docs/#httprequestapp",
   "repository": {
