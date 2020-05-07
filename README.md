@@ -48,6 +48,8 @@ To add it to your script, do the following in the Apps Script code editor:
 3. Choose a version in the dropdown box (usually best to pick the latest version).
 4. Click the "Save" button.
 
+You can also copy the ```ts``` code on ```/src``` folder or the executable [compiled script](https://script.google.com/d/1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_/edit?usp=sharing).
+
 
 #### Typescript Definitions for autocomplete:
 
