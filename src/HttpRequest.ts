@@ -42,6 +42,14 @@ class HttpRequest {
     return this;
   }
 
+  public slash(pathSegment: string) {
+    if (!this.url.endsWith('/') && !pathSegment.startsWith('/')) {
+      this.url += '/';
+    }
+    this.url += pathSegment;
+    return this;
+  }
+
   public setContentType(contentType: string): HttpRequest {
     this.options.contentType = contentType;
     return this;

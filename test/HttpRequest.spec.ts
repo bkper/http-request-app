@@ -40,4 +40,15 @@ describe('HttpRequest', () => {
     expect(httpRequest.getUrl()).to.equal("https://api.exchangeratesapi.io/history?key=xxx&id=yyy&start_at=2018-01-01&end_at=2018-09-01");
   });  
 
+  it('should allow dynamically build path', () => {
+    let httpRequest = newRequest("https://api.exchangeratesapi.io/history/?key=xxx&id=yyy")
+    .addParam('start_at', '2018-01-01')
+    .addParam('end_at', '2018-09-01')
+    .slash('a')
+    .slash('/b')
+    .slash('c/')
+    .slash('d')
+    expect(httpRequest.getUrl()).to.equal("https://api.exchangeratesapi.io/history/a/b/c/d?key=xxx&id=yyy&start_at=2018-01-01&end_at=2018-09-01");
+  });  
+
 });
