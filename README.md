@@ -1,7 +1,7 @@
 
 <h2 id="http-request-app">
 HttpRequestApp
-<a href='https://script.google.com/a/bkper.com/d/1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_/edit'>
+<a href='https://script.google.com/d/1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_/edit?usp=sharing'>
   <img height="30" width="30" src="https://bkper.com/docs/images/google-apps-script.svg"/>
 </a>
 </h2>
