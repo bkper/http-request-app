@@ -5,7 +5,7 @@ class HttpRequest {
   private url: string;
   protected method: "get" | "delete" | "patch" | "post" | "put" = "get";
   protected headers: any;
-  protected params: any;
+  protected params: Array<{name: string, value: string}>;
   protected contentType: string;
   protected payload: any;
   protected validateHttpsCertificates = true;
@@ -33,7 +33,7 @@ class HttpRequest {
   }
   
 
-  public addHeader(name: string, value: string): HttpRequest {
+  public setHeader(name: string, value: string): HttpRequest {
     if (this.headers == null) {
       this.headers = new Object();
     }
@@ -43,9 +43,9 @@ class HttpRequest {
 
   public addParam(name: string, value: any): HttpRequest {
     if (this.params == null) {
-      this.params = new Object();
+      this.params = [];
     }
-    this.params[name] = value;
+    this.params.push({name, value});
     return this;
   }
 
@@ -83,18 +83,16 @@ class HttpRequest {
       } else {
         i++;
       }
-      for (var prop in this.params) {
-        if (this.params.hasOwnProperty(prop)) {
+      for (const param of this.params) {
           if (i > 0) {
             url += "&";
           }
-          var key = prop;
-          var value = this.params[prop];          
+          var key = param.name;
+          var value = param.value;          
           if (value != null) {
             url += key + "=" + encodeURIComponent(value);
             i++;
           }
-        }
       }      
 
     }

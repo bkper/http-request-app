@@ -4,6 +4,6 @@
  * 
  * @param url The url to target the request
  */
-function newHttpRequest(url: string): HttpRequest {
+function newRequest(url: string): HttpRequest {
   return new HttpRequest(url)
 }

@@ -10,13 +10,11 @@ declare namespace Bkper {
      */
     export interface HttpRequestApp {
 
-        newHttpRequest(url: string): HttpRequest;
+        newRequest(url: string): HttpRequest;
 
     }
 
     export interface HttpRequest {
-
-        addHeader(name: string, value: string): HttpRequest;
 
         addParam(name: string, value: any): HttpRequest;
 
@@ -27,6 +25,8 @@ declare namespace Bkper {
         setContentType(contentType: string): HttpRequest;
 
         setFollowRedirects(followRedirects: boolean): HttpRequest;
+
+        setHeader(name: string, value: string): HttpRequest;
 
         setMethod(method: "get" | "delete" | "patch" | "post" | "put"): HttpRequest;
 
