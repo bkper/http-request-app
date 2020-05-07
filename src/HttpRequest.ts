@@ -3,15 +3,8 @@
  */
 class HttpRequest {
   private url: string;
-  protected method: "get" | "delete" | "patch" | "post" | "put" = "get";
-  protected headers: any;
-  protected params: Array<{name: string, value: string}>;
-  protected contentType: string;
-  protected payload: any;
-  protected validateHttpsCertificates = true;
-  protected followRedirects = true;
-  protected muteHttpExceptions = false;
-  protected escaping = true;
+  private params: Array<{name: string, value: string}>;
+  private options: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {};
 
   constructor(url: string) {
     let parts = url.split('?');
@@ -27,17 +20,17 @@ class HttpRequest {
     }
   }
 
-  public setMethod(method: "get" | "delete" | "patch" | "post" | "put"): HttpRequest {
-    this.method = method;
+  public setMethod(method: GoogleAppsScript.URL_Fetch.HttpMethod): HttpRequest {
+    this.options.method = method;
     return this;
   }
   
 
   public setHeader(name: string, value: string): HttpRequest {
-    if (this.headers == null) {
-      this.headers = new Object();
+    if (this.options.headers == null) {
+      this.options.headers = {} as GoogleAppsScript.URL_Fetch.HttpHeaders;
     }
-    this.headers[name] = value;
+    this.options.headers[name] = value;
     return this;
   }
 
@@ -50,27 +43,31 @@ class HttpRequest {
   }
 
   public setContentType(contentType: string): HttpRequest {
-    this.contentType = contentType;
+    this.options.contentType = contentType;
     return this;
   }
 
+  public getContentType(): string {
+    return this.options.contentType;
+  }
+
   public setPayload(payload: any): HttpRequest {
-    this.payload = payload;
+    this.options.payload = payload;
     return this;
   }
 
   public setValidateHttpsCertificates(validateHttpsCertificates: boolean): HttpRequest {
-    this.validateHttpsCertificates = validateHttpsCertificates;
+    this.options.validateHttpsCertificates = validateHttpsCertificates;
     return this;
   }
 
   public setFollowRedirects(followRedirects: boolean): HttpRequest {
-    this.followRedirects = followRedirects;
+    this.options.followRedirects = followRedirects;
     return this;
   }
 
   public setMuteHttpExceptions(muteHttpExceptions: boolean): HttpRequest {
-    this.muteHttpExceptions = muteHttpExceptions;
+    this.options.muteHttpExceptions = muteHttpExceptions;
     return this;
   }
 
@@ -100,32 +97,7 @@ class HttpRequest {
   }
 
   public fetch(): GoogleAppsScript.URL_Fetch.HTTPResponse {
-  
-    let options: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {};
-
-    if (this.headers != null) {
-      options.headers = this.headers;
-    }
-    
-    if (this.contentType != null) {
-      options.contentType = this.contentType;
-    }
-    
-    if (this.method != null) {
-      options.method = this.method;
-    }
-    
-    if (this.payload != null) {
-      options.payload = this.payload;
-    }
-
-    options.validateHttpsCertificates = this.validateHttpsCertificates
-    options.followRedirects = this.followRedirects;
-    options.muteHttpExceptions = this.muteHttpExceptions;
-    options.escaping = this.escaping;
-
-    return UrlFetchApp.fetch(this.getUrl(), options);
-    
+    return UrlFetchApp.fetch(this.getUrl(), this.options);
   }; 
 
 }

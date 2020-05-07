@@ -20,6 +20,8 @@ declare namespace Bkper {
 
         fetch(): GoogleAppsScript.URL_Fetch.HTTPResponse;
 
+        getContentType(): string;
+
         getUrl(): string;
 
         setContentType(contentType: string): HttpRequest;
@@ -28,7 +30,7 @@ declare namespace Bkper {
 
         setHeader(name: string, value: string): HttpRequest;
 
-        setMethod(method: "get" | "delete" | "patch" | "post" | "put"): HttpRequest;
+        setMethod(method: GoogleAppsScript.URL_Fetch.HttpMethod): HttpRequest;
 
         setMuteHttpExceptions(muteHttpExceptions: boolean): HttpRequest;
 

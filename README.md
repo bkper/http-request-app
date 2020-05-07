@@ -27,9 +27,9 @@ var response = UrlFetchApp.fetch('https://httpbin.org/post?key=yyy', options);
 
 **HttpRequestApp:**
 ```js
-var response = HttpRequestApp.newHttpRequest('https://httpbin.org/post')
+var response = HttpRequestApp.newRequest('https://httpbin.org/post')
                 .setMethod('post')
-                .addHeader('token', 'xxx')
+                .setHeader('token', 'xxx')
                 .addParam('key', 'yyy')
                 .setContentType('application/json')
                 .setPayload(JSON.stringify(data))
@@ -48,7 +48,7 @@ class HttpApiRequest extends HttpRequestApp.HttpRequest {
 
   fetch() {
     console.log(`Fetching as user ${Session.getActiveUser().getEmail()}`);
-    this.addHeader('Authorization', `Bearer ${ScriptApp.getOAuthToken()}`);
+    this.setHeader('Authorization', `Bearer ${ScriptApp.getOAuthToken()}`);
     this.addParam('key', PropertiesService.getScriptProperties().getProperty('API_KEY'));
     this.setContentType('application/json; charset=UTF-8')
     this.setMuteHttpExceptions(true);

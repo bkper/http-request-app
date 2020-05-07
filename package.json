@@ -19,7 +19,7 @@
     "open": "clasp open",
     "pull": "clasp pull",
     "push": "clasp push",
-    "start": "yarn push --watch",
+    "watch": "yarn push --watch",
     "test": "run-s test:*",
     "test:bundle": "tsc --skipLibCheck --sourcemap --outFile build/test-bundle.js --module system",
     "test:run": "mocha --require source-map-support/register build/test-bundle.js",
