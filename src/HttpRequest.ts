@@ -34,7 +34,7 @@ class HttpRequest {
     return this;
   }
 
-  public addParam(name: string, value: any): HttpRequest {
+  public addParam(name: string, value: string): HttpRequest {
     if (this.params == null) {
       this.params = [];
     }
@@ -59,7 +59,7 @@ class HttpRequest {
     return this.options.contentType;
   }
 
-  public setPayload(payload: any): HttpRequest {
+  public setPayload(payload: GoogleAppsScript.URL_Fetch.Payload): HttpRequest {
     this.options.payload = payload;
     return this;
   }

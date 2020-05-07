@@ -16,7 +16,7 @@ declare namespace Bkper {
 
     export interface HttpRequest {
 
-        addParam(name: string, value: any): HttpRequest;
+        addParam(name: string, value: string): HttpRequest;
 
         fetch(): GoogleAppsScript.URL_Fetch.HTTPResponse;
 
@@ -34,7 +34,7 @@ declare namespace Bkper {
 
         setMuteHttpExceptions(muteHttpExceptions: boolean): HttpRequest;
 
-        setPayload(payload: any): HttpRequest;
+        setPayload(payload: GoogleAppsScript.URL_Fetch.Payload): HttpRequest;
 
         setValidateHttpsCertificates(validateHttpsCertificates: boolean): HttpRequest;
 
