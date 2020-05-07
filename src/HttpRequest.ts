@@ -42,7 +42,7 @@ class HttpRequest {
     return this;
   }
 
-  public slash(pathSegment: string) {
+  public slash(pathSegment: string): HttpRequest {
     if (!this.url.endsWith('/') && !pathSegment.startsWith('/')) {
       this.url += '/';
     }

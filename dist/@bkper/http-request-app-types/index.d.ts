@@ -38,6 +38,8 @@ declare namespace Bkper {
 
         setValidateHttpsCertificates(validateHttpsCertificates: boolean): HttpRequest;
 
+        slash(pathSegment: string): HttpRequest;
+
     }
 
 }
