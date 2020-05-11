@@ -1,12 +1,7 @@
 
-<h2 id="http-request-app">
-HttpRequestApp
-<a href='https://script.google.com/d/1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_/edit?usp=sharing'>
-  <img height="30" width="30" src="https://bkper.com/docs/images/google-apps-script.svg"/>
-</a>
-</h2>
+## HttpRequestApp <a href='https://script.google.com/d/1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_/edit?usp=sharing'><img height="30" width="30" src="https://bkper.com/docs/images/google-apps-script.svg"/></a>
 
-Fluent interface for Google Apps Script [Url Fetch Service](https://developers.google.com/apps-script/reference/url-fetch), to simplify 3rd party API integrations.
+Fluent interface for Google Apps Script [Url Fetch Service](https://developers.google.com/apps-script/reference/url-fetch), to simplify HttpRequest building and 3rd party API integrations.
 
 [![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
 [![npm (scoped)](https://img.shields.io/npm/v/@bkper/http-request-app-types?color=%235889e4&label=types)](https://www.npmjs.com/package/@bkper/http-request-app-types)
@@ -37,7 +32,7 @@ var response = HttpRequestApp.newRequest('https://httpbin.org/post')
 ```
 
 
-<h3 id="http-request-app-setup">Setup</h3>
+### Setup
 
 This library is already published as an Apps Script, making it easy to include in your project. 
 
