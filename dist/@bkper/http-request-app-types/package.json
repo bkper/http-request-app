@@ -1,8 +1,8 @@
 {
   "name": "@bkper/http-request-app-types",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Typescript definitions for HttpRequestApp",
-  "homepage": "https://bkper.com/docs/#httprequestapp",
+  "homepage": "https://bkper.com/docs/",
   "repository": {
     "type": "git",
     "url": "https://github.com/bkper/http-request-app.git"

@@ -1,6 +1,6 @@
 # Summary
 
-This package contains Typescript definitions for [HttpRequestApp](https://bkper.com/docs/#httprequestapp)
+This package contains Typescript definitions for [HttpRequestApp](https://bkper.com/docs/)
 
 # Instalation
 
