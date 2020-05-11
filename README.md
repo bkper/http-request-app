@@ -1,5 +1,5 @@
 
-## HttpRequestApp <a href='https://script.google.com/d/1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_/edit?usp=sharing'><img height="30" width="30" src="https://bkper.com/docs/images/google-apps-script.svg"/></a>
+## HttpRequestApp
 
 Fluent interface for Google Apps Script [Url Fetch Service](https://developers.google.com/apps-script/reference/url-fetch), to simplify HttpRequest building and 3rd party API integrations.
 
@@ -34,7 +34,7 @@ var response = HttpRequestApp.newRequest('https://httpbin.org/post')
 
 ### Setup
 
-This library is already published as an Apps Script, making it easy to include in your project. 
+This library is already published as an [Apps Script](https://script.google.com/d/1Iqaz0dbrlOXp9D2giO0DS6CDW_Q4IrgfhTJyYqxknww_OmFVF_4NQVR_/edit?usp=sharing), making it easy to include in your project. 
 
 To add it to your script, do the following in the Apps Script code editor:
 
