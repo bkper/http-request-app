@@ -2,7 +2,7 @@
  * 
  * @public
  * 
- * @param url The url to target the request
+ * @param url The target url of the http request to fetch from.
  */
 function newRequest(url: string): HttpRequest {
   return new HttpRequest(url)

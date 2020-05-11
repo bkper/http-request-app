@@ -2,7 +2,7 @@
   "name": "@bkper/http-request-app",
   "version": "1.0.8",
   "description": "Fluent interface for Google Apps Script URL Fetch Service, to simplify 3rd party API integrations",
-  "homepage": "https://bkper.com/docs/#httprequestapp",
+  "homepage": "https://bkper.com/docs/",
   "repository": {
     "type": "git",
     "url": "https://github.com/bkper/http-request-app.git"
