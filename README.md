@@ -30,7 +30,7 @@ var response = HttpRequestApp.newRequest('https://httpbin.org/post')
                 .setPayload(JSON.stringify(data))
                 .fetch()
 ```
-
+>There is an open [feature request](https://issuetracker.google.com/issues/156446909) to include it as a feture in the URL Fetch Service. Please start this issue if you think it makes sense.
 
 ### Setup
 
