@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "module": "none",
-    "noImplicitUseStrict": true,
     "experimentalDecorators": true,
     "lib": [ "esnext" ],
-    "target": "ES3",
+    "target": "ES6",
     "noImplicitAny": true
   },
   "include": [
